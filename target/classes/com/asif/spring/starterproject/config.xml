@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="EmployeeBean"
+		class="com.asif.spring.starterproject.Employee" p:id="1"
+		p:name="My Testname" />
+
+	<bean name="HospitalBean"
+		class="com.asif.spring.starterproject.Hospital">
+		<property name="name" value="Gunam Multi Speciality Hospital" />
+		<property name="departments" value="Radiology">
+		</property>
+	</bean>
+
+	<bean name="CarDealerBean"
+		class="com.asif.spring.starterproject.CarDealer">
+		<property name="name" value="Cars24" />
+		<property name="models">
+			<set>
+				<value>BMW</value>
+				<value>MG</value>
+				<value>Mercedez</value>
+				<null />
+				<value></value>
+				<value>BMW</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean name="AddressBean"
+		class="com.asif.spring.starterproject.Address" p:line="50 Meadoleaze"
+		p:zipCode="DN211ZA" />
+
+	<bean name="CustomerBean"
+		class="com.asif.spring.starterproject.Customer"
+		p:address-ref="AddressBean">
+		<property name="name" value="Myself" />
+		<property name="products">
+			<map>
+				<entry key="Redmi Note 8" value="1" />
+				<entry key="Redmi Note 5 Avengers Case" value="1" />
+				<entry key="Skybags 68 inch travel bag" value="3" />
+				<entry key="Redmi Note 5 Avengers Case" value="3" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- 
+		Using Inner Beans.
+		Customer has Address. So using address as inner bean instead of <ref/>
+	 -->
+	<bean name="CustomerBeanUsingInnerClass"
+		class="com.asif.spring.starterproject.Customer" p:name="Name" scope="prototype">
+		<property name="products">
+			<map>
+				<entry key="Redmi Note 8" value="1" />
+				<entry key="Redmi Note 5 Avengers Case" value="1" />
+				<entry key="Skybags 68 inch travel bag" value="3" />
+				<entry key="Redmi Note 5 Avengers Case" value="3" />
+			</map>
+		</property>
+		<property name="address">
+			<bean class="com.asif.spring.starterproject.Address"
+				p:line="50 Meadoleaze" p:zipCode="DN211ZA" />
+		</property>
+	</bean>
+
+	<!-- Assignment One. - Create a ShoppingListCart which stores Multiple Items 
+		user adds - Items contains (id, name, price & quantity) -->
+	<bean name="Apple" class="com.asif.spring.assignments.one.Item"
+		p:id="1" p:name="Apple 1Kg" p:price="120" p:quantity="2" />
+	<bean name="Banana" class="com.asif.spring.assignments.one.Item"
+		p:id="1" p:name="Banana 1Kg" p:price="60" p:quantity="3" />
+	<bean name="MiNote8" class="com.asif.spring.assignments.one.Item"
+		p:id="1" p:name="Redmi Note 8" p:price="12999" p:quantity="1" />
+
+	<!-- <bean name="ShoppingListBeanUsingXMLConfigFile" class="com.asif.spring.assignments.one.ShoppingList" 
+		p:name="Asif" init-method="calculateTotalBasket" destroy-method="resetTotalBasket"> 
+		Life-Cycle using XML Configuration File <property name="items"> <list> <ref 
+		bean="Apple" /> <ref bean="Banana" /> </list> </property> </bean> <bean name="ShoppingListBeanUsingSpringInterface" 
+		class="com.asif.spring.assignments.one.ShoppingList" p:name="Asif"> Life-Cycle 
+		using Spring Interface <property name="items"> <list> <ref bean="Apple" /> 
+		<ref bean="Banana" /> </list> </property> </bean> -->
+
+	<bean name="ShoppingListBeanUsingAnnotations"
+		class="com.asif.spring.assignments.one.ShoppingList" p:name="Rahul">	<!-- Life-Cycle using Spring Interface -->
+		<property name="items">
+			<list>
+				<ref bean="MiNote8" />
+			</list>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+</beans>
