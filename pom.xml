@@ -13,7 +13,7 @@
 
 
 	<properties>
-		<!-- Spring Framework.  -->
+		<!-- Spring Framework. -->
 		<springframework.version>4.3.18.RELEASE</springframework.version>
 	</properties>
 
@@ -35,8 +35,8 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-	
+
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -45,8 +45,8 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.2</version>
 					<configuration>
-						<!-- Selecting java version for compiler.
-							By default, it uses 1.6 version of java compiler -->
+						<!-- Selecting java version for compiler. By default, it uses 1.6 version 
+							of java compiler -->
 						<source>1.8</source>
 						<target>1.8</target>
 					</configuration>

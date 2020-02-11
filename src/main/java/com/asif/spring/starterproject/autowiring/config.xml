@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="address"
+		class="com.asif.spring.starterproject.autowiring.Address"
+		p:houseNo="1/127" p:area="Kalukondapalli" p:city="Hosur" />
+
+	<bean name="employeeByType"
+		class="com.asif.spring.starterproject.autowiring.EmployeeByType"
+		p:name="Asif" autowire="byType" />
+
+	<bean name="employeeByName"
+		class="com.asif.spring.starterproject.autowiring.EmployeeByName"
+		p:name="Asif" autowire="byName" />
+
+	<bean name="employeeByConstructor"
+		class="com.asif.spring.starterproject.autowiring.EmployeeByConstructor"
+		c:name="Asif" autowire="constructor" />
+</beans>
