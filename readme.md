@@ -89,6 +89,31 @@ Chapter 1:-
 				- Object Types
 					- Inject it using `@Autowired` & `@Qualifier` annotations
 	- Spring Expression Language
-		
+		- @Value("#{expression}")
+		- @Value("#{2+3}") = value is 5
+		- @Value("#{T(java.util.Math).abs(-5)}") = value is +5
+		- @Value("#{T(java.lang.Integer).MIN}") = minimum value of integer is set
+	- InterfaceInjection
+		- create an interface
+		- implement the interface
+		- create a bean for interface & use it
+	- Spring JDBC
+		- DriverManagerDataSource 
+			- implements the dataSource
+			- uses (driverClassName, url, username, password)
+		- JdbcTemplate
+			- uses DriverManagerDataSource to connect and perform jdbc operations
+			- uses (dataSource)
+			- update(sql, ...args)
+				- takes care of insert, update & delete
+			- select operation
+				- queryForObject(sql, rowMapper, ...args)
+					- returns only one row
+				- query(sql, rowMapper, ...args)
+					- returns multiple rows
+				- RowMapper
+					- maps the ResultSet with the Object
+					- overrides rowMap() 
+			
 		
 		
