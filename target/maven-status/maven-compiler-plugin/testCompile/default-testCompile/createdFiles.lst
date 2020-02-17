@@ -1,11 +1,16 @@
-com/asif/spring/starterproject/CustomerTest.class
+com/asif/spring/starterproject/Solution.class
+com/asif/spring/starterproject/injectinterface/OrderTest.class
 com/asif/spring/starterproject/PrescriptionTest.class
 com/asif/spring/starterproject/HospitalTest.class
+com/asif/spring/starterproject/jdbc/JdbcConnectionTest.class
+com/asif/spring/starterproject/CustomerTest.class
 com/asif/spring/starterproject/ShoppingListTest.class
 com/asif/spring/starterproject/EmployeeTest.class
 com/asda/spring/starterproject/properties/PropertyTest.class
+com/asif/spring/starterproject/jdbc/dao/impl/MovieDaoImplTest.class
 com/asif/spring/starterproject/autowiring/EmployeeTest.class
 com/asif/spring/starterproject/autowiring/Solution.class
+com/asif/spring/starterproject/jdbc/HibernateTest.class
 com/asif/spring/starterproject/constructorinjection/CustomerTest.class
 com/asif/spring/starterproject/autowiring/Solution2.class
 com/asif/spring/starterproject/stereotypeannotations/InstructorTest.class
